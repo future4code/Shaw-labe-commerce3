@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CardProdutos from './components/CardProdutos';
+import Home from './components/Home';
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div> 
 
-     <CardProdutos/>
+     <Home/>
 
     </div>
   );
