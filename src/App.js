@@ -1,26 +1,30 @@
 import React from "react";
-import "./css";
+import "./App.css";
+import Home from "./components/Home";
+import Filter from "./components/Filter/Filter";
 
-class App extends React.Component {
+function App() {
   state = {
     minFilter: "",
     maxFilter: "",
-    nameFilter:"",
-    productsInCart: []
+    nameFilter: "",
+    productsInCart: [],
   };
+  return (
+    <div>
+      <Filter />
+      <Home />
 
-  render() {
-    return (
-      <AppContainer>
-        <Filters
-         minFilter={this.state.minFilter} 
-         maxFilter={this.state.maxFilter} 
-         nameFilter={this.state.nameFilter} 
-         />
-        <ShoppingCart productsInCart={this.states} />
-      </AppContainer>
-    );
-  }
+      {/* <AppContainer>
+<Filters
+ minFilter={this.state.minFilter} 
+ maxFilter={this.state.maxFilter} 
+ nameFilter={this.state.nameFilter} 
+ />
+<ShoppingCart productsInCart={this.states} />
+</AppContainer>  */}
+    </div>
+  );
 }
 
 export default App;
