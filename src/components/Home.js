@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CardProdutos from './components/CardProdutos';
+import CardProdutos from './CardProdutos';
 
 
 
