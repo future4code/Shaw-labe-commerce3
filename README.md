@@ -77,24 +77,17 @@ $ npm start
 
 <a href="https://github.com/mariabelencaldez">
  <img style="border-radius: 50%;" src="https://github.com/mariabelencaldez.png" width="100px;" alt="María Belén"/>
-<b style="display:flex;margin:25px;">María Belén</b> 
+<b style="display:flex; margin:25px;">María Belén</b> 
 </a>
 
 <a href="https://github.com/jcrestanij">
  <img style="border-radius: 50%;" src="https://github.com/jcrestanij.png" width="100px;" alt="Jacson Crestani"/>
-<b style="display:flex;margin:20px;">Jacson Crestani</b> 
+<b style="display:flex;  flex-direction:column; margin:20px;">Jacson Crestani</b> 
 </a>
 
 
  </p>
 
 
-
-<!-- <p float="left">
-  <img src="https://github.com/nicksoto1.png" style="border-radius: 50%; width:20% " />
-	<b>Michael Soto</b> 
-  <img src="/img2.png" width="100" /> 
-  <img src="/img3.png" width="100" />
-</p> -->
 
 
