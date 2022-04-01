@@ -1,10 +1,18 @@
 import React from "react";
-import "./App.css";
+import "./styles.js";
 import Filter from "./components/Filter/Filter";
-import { ShoppingCart } from "./components/ShoppingCart";
+import Cart from "./components/Cart/Cart";
+// import { ShoppingCart } from "./components/ShoppingCart";
 // belén inicio
-import CardProdutos from "./components/CardProdutos";
-import styled from "styled-components";
+import CardProdutos from "./components/CardProdutos/CardProdutos";
+import {
+  Container,
+  ContainerPai,
+  ContainerProdutos,
+  Textos,
+  Ordenadores,
+  ListContainer,
+} from "./styles";
 import a from "./Imagens/a.jpg";
 import b from "./Imagens/b.jpg";
 import c from "./Imagens/c.jpg";
@@ -56,60 +64,15 @@ const produtos = [
   },
 ];
 
-const ContainerPai = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
-  height: 100%;
-`;
-
-const ContainerProdutos = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 90%;
-  height: 80%;
-  gap: 10px;
-`;
-
-const Textos = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 90%;
-`;
-
-const Ordenadores = styled.p`
-  display: flex;
-  justify-content: end;
-  flex-direction: row;
-  width: 90%;
-`;
-
-export const ListContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  * {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
-
-// belén fin
-
 class App extends React.Component {
   // ANCHOR  STATE
   state = {
+    produtos: produtos,
     nameFilter: "",
     minFilter: "",
     maxFilter: "",
     sortingParameter: "title",
     order: 1,
-    // belén
-    produtos: produtos,
   };
 
   // ANCHOR  EVENT
@@ -159,24 +122,12 @@ class App extends React.Component {
   };
   // belén fin ordem
   render() {
-    // belén inicio
-    const lista = this.state.produtos.map((p) => {
-      return (
-        <CardProdutos
-          imagemProduto={p.imagem}
-          nomeProduto={p.nome}
-          precoProduto={p.preco}
-          key={p.id}
-        />
-      );
-    });
-    // belén fin
     return (
-      <div>
+      <Container>
         <Filter
           nameFilter={this.state.nameFilter}
           updateName={this.state.updateName}
-          updateMinFilter={this.state.updateminFilter}
+          updateMinFilter={this.state.updateMinFilter}
           updateMaxFilter={this.state.updateMaxFilter}
           updateSortingParemeter={this.state.updateSortingParemeter}
           updateOrder={this.state.updateOrder}
@@ -188,7 +139,7 @@ class App extends React.Component {
         {/*belén inicio*/}
         <ContainerPai>
           <Textos>
-            <p> Quantidade de produtos:</p>
+            <p>Quantidade de produtos: {produtos.length}</p>
             <Ordenadores>
               <button onClick={this.OrdemCrescente}> Ordem Crescente</button>
               <button onClick={this.OrdemDecrescente}>
@@ -198,54 +149,59 @@ class App extends React.Component {
             </Ordenadores>
           </Textos>
 
-          <ContainerProdutos>{lista}</ContainerProdutos>
+          {/* <ContainerProdutos>
+            {this.state.produtos
+              .filter(
+                (p) =>
+                  p.title
+                    .toLowerCase()
+                    .includes(this.state.query.toLowerCase()) ||
+                  p.description
+                    .toLowerCase()
+                    .includes(this.state.query.toLowerCase())
+              )
+              .filter((p) => {
+                return (
+                  this.state.minFilter === "" || p.price >= this.state.minFilter
+                );
+              })
+              .filter((p) => {
+                return (
+                  this.state.maxFilter === "" || p.price <= this.state.maxFilter
+                );
+              })
+              .sort((currentJob, nextJob) => {
+                switch (this.state.sortingParameter) {
+                  case "title":
+                    return (
+                      this.state.order * currentJob.title.localeCompare(nextJob.title)
+                    );
+                  case "dueDate":
+                    return (
+                      this.state.order *
+                      (new Date(currentJob.dueDate).getTime() -
+                        new Date(nextJob.dueDate).getTime())
+                    );
+                  default:
+                    return this.state.order * (currentJob.price - nextJob.price);
+                }
+              })
+              .map((p) => {
+                return (
+                  <CardProdutos
+                    imagemProduto={p.imagem}
+                    nomeProduto={p.nome}
+                    precoProduto={p.preco}
+                    key={p.id}
+                  />
+                );
+              })}
+          </ContainerProdutos> */}
         </ContainerPai>
         {/* belén fin */}
 
-        <ListContainer>
-          {this.state.jobs
-            .filter((job) => {
-              return (
-                job.title
-                  .toLowerCase()
-                  .includes(this.state.query.toLowerCase()) ||
-                job.description
-                  .toLowerCase()
-                  .includes(this.state.query.toLowerCase())
-              );
-            })
-            .filter((job) => {
-              return (
-                this.state.minPrice === "" || job.price >= this.state.minPrice
-              );
-            })
-            .filter((job) => {
-              return (
-                this.state.maxPrice === "" || job.price <= this.state.maxPrice
-              );
-            })
-            .sort((currentJob, nextJob) => {
-              switch (this.state.sortingParameter) {
-                case "title":
-                  return (
-                    this.state.order *
-                    currentJob.title.localeCompare(nextJob.title)
-                  );
-                case "dueDate":
-                  return (
-                    this.state.order *
-                    (new Date(currentJob.dueDate).getTime() -
-                      new Date(nextJob.dueDate).getTime())
-                  );
-                default:
-                  return this.state.order * (currentJob.price - nextJob.price);
-              }
-            })
-            .map((job) => {
-              return <Card key={job.id} job={job} />;
-            })}
-        </ListContainer>
-      </div>
+        <Cart />
+      </Container>
     );
   }
 }

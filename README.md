@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O LabECommerce é um site  que filtra os produtos pelo:
 * nome
-* preço minimo
+* preço minimo 
 * preço maximo
 * ordena em ordem crescente e descrente por nome do produto
 * permite adicionar o produto ao carrinho 
@@ -39,7 +39,7 @@ O LabECommerce é um site  que filtra os produtos pelo:
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através desse  [link]( ). 
+Você pode visualizar o layout do projeto através desse  [link](labeCommerce-shaw.surge.sh ). 
 
 ## 🚀 Como executar
 

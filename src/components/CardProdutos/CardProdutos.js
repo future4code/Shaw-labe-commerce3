@@ -1,32 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import  { ContainerCard,Card,Imagem,Boton} from "./styles";
 // import imagem1 from '../Imagens/imagem1.jpg'
 
-
-
-const ContainerCard = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Card = styled.div`
-  border: 1px solid gray; 
-  width: 85%;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-`;
-
-const Imagem = styled.img `
-   width: 100%;
-
-`;
-
-const Boton = styled.button`
-`;
 
 
 function CardProdutos (props) {
