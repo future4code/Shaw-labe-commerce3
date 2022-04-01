@@ -6,35 +6,29 @@ class Filter extends React.Component {
   
   render() {
     return (
-      <S.FilterContainer>
-        <h3>Filtro</h3>
+      <S.Container>
+      <S.ContainerFilter>
 
-        <S.InputContainer>
-        Valor Mínimo:
-        <input type="number" 
-        value={this.props.minFilter}
-        onChange={this.props.onChangeMinFilter}
-        />
-        </S.InputContainer>
+<S.ContainerInput>
+<h3>Filtros</h3>
 
-        <S.InputContainer>
-        Valor Máximo:
-        <input type="number" 
-        value={this.props.maxFilter}
-        onChange={this.props.onChangeMaxFilter}
-        />
-        </S.InputContainer>
+Valor Mínimo:
+<S.Input type="number"
+value={this.props.minFilter}
+onChange={this.props.onChangeMinFilter}
+/>
+Valor Máximo:
+<S.Input type="number"
+value={this.props.maxFilter}
+onChange={this.props.onChangeMaxFilter}
+/>
+Busca por nome:
+<S.Input type="text" 
+ value={this.props.nameFilter}
+ onChange={this.props.onChangeNameFilter}
+/>
 
-        <S.InputContainer>
-        Busca por Nome:
-        <input type="text" 
-        value={this.props.nameFilter}
-        onChange={this.props.onChangeNameFilter}
-        />
-        </S.InputContainer>
-
-
-        <span>
+<div>
          <label htmlFor="sort">Ordenação: </label>
          <select
             name="sort"
@@ -45,18 +39,13 @@ class Filter extends React.Component {
             <option value="price">Preço</option>
             <option value="dueDate">Prazo</option>
          </select>
-      </span>
+      </div>
+</S.ContainerInput>
 
-      {/* <select
-         name="order"
-        //  value={props.order}
-        //  onChange={props.updateOrder}
-      >
-         <option value={1}>Crescente</option>
-         <option value={-1}>Decrescente</option>
 
-      </select> */}
-      </S.FilterContainer>
+     
+      </S.ContainerFilter>
+      </S.Container>
     );
   }
 }
