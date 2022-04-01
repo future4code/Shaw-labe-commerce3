@@ -1,29 +1,57 @@
 import React from "react";
+import CardProdutos from "./CardProdutos";
+import styled from 'styled-components';
+
+export const ShoppingCartContainer = styled.div`
+  
+`;
+
+export const CartListContainer = styled.div`
+  
+`;
+
+export const ShoppingCartItem = styled.div`
+  
+`;
+
+
+
 
 export class ShoppingCart extends React.Component {
-  getTotalValue = () => {
-    let totalValue = 0;
+  constructor(props){
+    super(props);
+    this.state = {
+      qty: 0
+     };
 
-    for (let product of this.props.productsInCart) {
-      totalValue += product.price * product.quantity;
+      this.add = this.add.bild(this);
+      this.remuve = this.remuve.bild(this);
+    
+      add(){
+       this.setState({
+         qty: this.state.qty + 1
+        });
+      }
+
+     remove(){
+      this.setState({
+        qty: this.state.qty - 1
+      });
     }
 
-    return totalValue;
-  };
+    render() {
+      return (
+        <div>
+          <div className="#">
+            <h3>aaaaaa</h3>
 
-  render() {
-    return (
-      <ShoppingCartContainer>
-        <h3>Carrinho:</h3>
-        <CartListContainer>
-          {this.props.productsInCart.map((product) => {
-            return <ShoppingCartItem cartItem={product} />;
-          })}
-        </CartListContainer>
-        <p>Valor total: {this.getTotalValue()},00</p>
-      </ShoppingCartContainer>
-    );
+          </div>
+        </div>
+      )
+    }
+   
   }
+
 }
-
-
+   export default ShoppingCart;
+ 

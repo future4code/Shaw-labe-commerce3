@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import imagem1 from '../Imagens/imagem1.jpg'
+// import imagem1 from '../Imagens/imagem1.jpg'
 
 
 
-
-
-const Container = styled.div`
+const ContainerCard = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -14,8 +12,8 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  border: 1px solid gray;
-  width: 300px;
+  border: 1px solid gray; 
+  width: 85%;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -31,23 +29,21 @@ const Boton = styled.button`
 `;
 
 
-class Home extends React.Component {
-    render() {
+function CardProdutos (props) {
+    
+
       return (
-        <Container>
+        <ContainerCard>
           <Card>
-          <Imagem src={imagem1} />
-            <p>Arandanos</p>
-            <p>R$200,00</p>          
+            <Imagem src={props.imagemProduto} />
+            <p>{props.nomeProduto}</p>  
+            <p>{props.precoProduto}</p>          
             <Boton>
               Adicionar ao carrinho
             </Boton>
           </Card>
-          
-        
-        </Container>
+        </ContainerCard>
       );
-    }
+    
   }
-  export default Home;
-  
+  export default CardProdutos;

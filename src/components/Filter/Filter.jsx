@@ -3,11 +3,12 @@ import * as S from './styles'
 
 class Filter extends React.Component {
  
-
+  
   render() {
     return (
       <S.FilterContainer>
         <h3>Filtro</h3>
+
         <S.InputContainer>
         Valor Mínimo:
         <input type="number" 
@@ -31,6 +32,30 @@ class Filter extends React.Component {
         onChange={this.props.onChangeNameFilter}
         />
         </S.InputContainer>
+
+
+        <span>
+         <label htmlFor="sort">Ordenação: </label>
+         <select
+            name="sort"
+            value={this.props.sortingParameter}
+            onChange={this.props.updateSortingParameter}
+         >
+            <option value="title">Título</option>
+            <option value="price">Preço</option>
+            <option value="dueDate">Prazo</option>
+         </select>
+      </span>
+
+      {/* <select
+         name="order"
+        //  value={props.order}
+        //  onChange={props.updateOrder}
+      >
+         <option value={1}>Crescente</option>
+         <option value={-1}>Decrescente</option>
+
+      </select> */}
       </S.FilterContainer>
     );
   }
