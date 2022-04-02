@@ -122,6 +122,17 @@ class App extends React.Component {
   };
   // belén fin ordem
   render() {
+    const lista = this.state.produtos.map((p) => {
+      return (
+        <CardProdutos
+          imagemProduto={p.imagem}
+          nomeProduto={p.nome}
+          precoProduto={p.preco}
+          key={p.id}
+        />
+      );
+    });
+
     return (
       <Container>
         <Filter
@@ -197,6 +208,8 @@ class App extends React.Component {
                 );
               })}
           </ContainerProdutos> */}
+
+         <ContainerProdutos>{lista}</ContainerProdutos> 
         </ContainerPai>
         {/* belén fin */}
 
