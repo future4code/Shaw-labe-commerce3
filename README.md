@@ -12,13 +12,11 @@
   
 </p>
 
+![print](https://user-images.githubusercontent.com/67668995/161386648-1cab545f-9936-4abb-b964-bae432c85c72.png)
 
 
 <br>
 
-<p align="center">
-  <img alt="LabECommerce" src=" " width="100%">
-</p>
 
 ## ✨ Tecnologias
 
