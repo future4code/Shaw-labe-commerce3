@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img alt="LabECommerce" src=" " width="100%">
+  <img alt="LabECommerce" src="src/Imagens/print.png " width="100%">
 </p>
 
 ## ✨ Tecnologias
