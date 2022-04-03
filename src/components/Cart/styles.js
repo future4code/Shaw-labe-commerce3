@@ -1,4 +1,6 @@
+
 import styled from "styled-components";
+
 
 export const PaiContainerCarrinho = styled.div`
   padding: 5%;

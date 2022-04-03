@@ -1,26 +1,17 @@
+import styled from "styled-components";
 
-import styled from 'styled-components';
+export const CardContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: lavender;
+  padding: 0 15px;
+  border-radius: 5px;
 
-export const ContainerCard = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  img {
+    width: 100%;
+  }
 `;
 
-export const Card = styled.div`
-  border: 1px solid gray; 
-  width: 85%;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-`;
-
-export const Imagem = styled.img `
-   width: 100%;
-
-`;
-
-export const Boton = styled.button`
+export const CardFooter = styled.h4`
+  grid-area: area1;
 `;
