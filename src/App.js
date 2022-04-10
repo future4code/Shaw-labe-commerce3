@@ -74,7 +74,7 @@ class App extends React.Component {
     sortingParameter: "title",
     order: 1,
   };
-
+// correcao do codigo
   // ANCHOR  EVENT
   onChangeNameFilter = (event) => {
     this.setState({ nameFilter: event.target.value });
